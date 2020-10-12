@@ -29,13 +29,19 @@ class Admin(User):
         self.last_name = last_name
         self.age = age
         self.location = location
-        self.privileges = None
+        self.privileges = Privileges()
 
-    def show_privileges(self, *privileges):
-        print(privileges)
+
+class Privileges:
+    def __init__(self):
+        self.privileges = ('разрешено добавлять сообщения',
+                           'разрешено удалять пользователей',
+                           'разрешено банить пользователей',
+                           )
+
+    def show_privileges(self):
+        print(f"Admin have privileges: \n{self.privileges}")
 
 
 admin = Admin('aaa', 'ddd', 'fff', 'sss')
-admin.show_privileges('разрешено добавлять сообщения',
-                      'разрешено удалять пользователей',
-                      'разрешено банить пользователей',)
+admin.privileges.show_privileges()
