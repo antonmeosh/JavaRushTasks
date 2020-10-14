@@ -5,10 +5,11 @@ class Restaurant:
         self.number_served = 0
 
     def describe_restaurant(self):
-        print(f"Restaurant name is {self.name}. It is {self.cuisine} food.")
+        print(f"Restaurant name is {self.name.title()}. It is {self.cuisine} "
+              f"food.")
 
     def open_restaurant(self):
-        print(f"Restaurant {self.name} is now open.")
+        print(f"Restaurant {self.name.title()} is now open.")
 
     def today_served(self):
         print(f"{self.name} today served {self.number_served} people.")
@@ -29,9 +30,3 @@ class IceCreamStand(Restaurant):
 
     def show_flavors(self):
         print(f"{self.flavors}")
-
-
-iceCream = IceCreamStand("Basking Robins",)
-iceCream.flavors = ('cherry', 'chocolate', 'strawberry', 'raspberry')
-iceCream.describe_restaurant()
-iceCream.show_flavors()
